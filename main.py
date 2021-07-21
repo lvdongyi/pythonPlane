@@ -36,6 +36,7 @@ class HeroPlane():
                     if self.y_hero<bul.y_bullet and bul.y_bullet<self.y_hero+72:
                         print("User is attacked")
                         Enemy.BulletList.remove(bul)
+                        pygame.mixer.Sound(".//Resources//explosion.mp3").play()
 class Bullet():
     def __init__(self,screen,x_bullet,y_bullet,By):
         if By==0:
@@ -101,6 +102,7 @@ class Enemy:
                 if self.x_enemy<bul.x_bullet and bul.x_bullet<self.x_enemy+72:
                     if self.y_enemy<bul.y_bullet and bul.y_bullet<self.y_enemy+72:
                         print("Enemy is attacked")
+                        pygame.mixer.Sound(".//Resources//explosion.mp3").play()
                         HeroPlane.bulletList.remove(bul)
 def key_control1(heroobj):
     for event in pygame.event.get():
